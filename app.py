@@ -6,7 +6,7 @@ st.title("Billionaire Mentor AI")
 # API Key check
 if "GOOGLE_API_KEY" in st.secrets:
     genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
-    model = genai.GenerativeModel("gemini-pro")
+    model = genai.GenerativeModel("gemini-1.5-flash")
 else:
     st.error("Secrets set nahi hai!")
     st.stop()
