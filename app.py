@@ -1,19 +1,13 @@
 import streamlit as st
 import google.generativeai as genai
 
-# Page setup
 st.set_page_config(page_title="Billionaire Mentor AI")
 st.title("Billionaire Mentor AI")
 
-# API Key setup
 api_key = st.secrets["GOOGLE_API_KEY"]
 genai.configure(api_key=api_key)
 
-# Model setup
-model = genai.GenerativeModel(
-    model_name="gemini-1.5-flash-latest",
-    system_instruction="Tum ek expert Business Mentor ho."
-)
+model = genai.GenerativeModel("gemini-1.5-flash")
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
